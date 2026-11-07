@@ -1,14 +1,14 @@
 public class Assignment01Q05 {
-    public static int rec(int[][]met,int i,int j, int n){
+    public static int rec(int[][]m1,int i,int j, int n){
         if (i==j)
             return n;
-        int len = met.length;
+        int len = m1.length;
         int max = len*len+1;
         for (int k=0;k<len;k++){
-            if (met[i][k]==1){
-                int[][] m1 = met.clone();
-                m1[i][k]=0;
-                int path = rec(m1, k, j, n+1);
+            if (m1[i][k]==1){
+                m1[i][k] = 0;
+                int path = rec(m1, k, j, n + 1);
+                m1[i][k] = 1; 
                 if (path < max)
                     max = path;
             }
