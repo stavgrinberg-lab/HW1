@@ -3,16 +3,12 @@ import java.util.Arrays;
 public class Assignment01Q04 {
 
     public static int[] shiftArrayCyclic(int[] array, int move, char direction) {
-
         int n = array.length;
-
         if (n==0)
             return array;
         move %= n;
-
         if (!(direction=='L' || direction=='R'))
             return array;
-
         if (move<0){
             if (direction=='R')
                 return shiftArrayCyclic(array, -move, 'L');
@@ -31,10 +27,8 @@ public class Assignment01Q04 {
                     array2[i] = array[n+(i-move)];
             }
           }
-
-          for (int j=0;j<n;j++)
-            array[j] = array2[j];
-        
+            for (int j=0;j<n;j++)
+                array[j] = array2[j];
         }
 
 
